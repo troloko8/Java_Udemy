@@ -1,5 +1,5 @@
 
-public class Demo {
+public class ArrayInWork {
     public static void main(String a[]) 
     {
         int nums[][] = new int[3][4];
@@ -11,19 +11,22 @@ public class Demo {
 
                 // System.err.println(nums[i][j] + ' ');
                 System.err.print(nums[i][j] + " ");
-                System.err.print(Math.random());
             }
 
                 System.err.println();
         }
 
-        for (int i = 0; i < 3; i++) {
+            System.err.println();
+            System.err.println();
 
-            // for (int j = 0; j < 4; j++) {
-            //     nums[i][j] = (int) (Math.random() * 100);
+        for (int n[] : nums) {
+            System.err.println(n[0]);
+            
+            for (int m : n) {
+                System.err.print(m + " ");
+            }
 
-            //     System.err.print(nums[i][j]);
-            // }
+            System.err.println();
         }
     }
 }
