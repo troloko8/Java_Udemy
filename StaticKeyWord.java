@@ -5,7 +5,7 @@ class Mobile {
     int price;
     static String name; // static means that this variable is shared and belong not to created object intance but to this class
 
-    // implementation of cunstructor concept
+    // implementation of constructor concept
     public Mobile() 
     {
         brand = "";
