@@ -38,4 +38,19 @@ public class QuestionService {
             System.err.println("your answer is : " + s);
         }
     }
+
+    public void printScore() {
+        int score = 0;
+
+        for( int i = 0; i < questions.length; i++) {
+            String rightAnswer = questions[i].getAnswer();
+            String userAnswer = selection[i];
+
+            if (rightAnswer.equals(userAnswer)) {
+                score++;
+            }
+        }
+
+        System.err.println("Your score is " + score + " from " + questions.length);
+    }
 }
