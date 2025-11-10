@@ -1,7 +1,10 @@
 package quizProj;
 
+import java.util.Scanner;
+
 public class QuestionService {
     Question[] questions = new Question[5];
+    String[] selection = new String[5];
 
     public QuestionService() {
         questions[0] = new Question(1,"What_A","a","b","c","d","a");
@@ -11,10 +14,28 @@ public class QuestionService {
         questions[4] = new Question(5,"What_A","a","b","c","d","a");
     }
 
-    public void displayQuestions() {
+    public void playQuiz() {
+        int i = 0;
+
         for(Question q : questions) {
             // System.err.println(q.getQuestion());
-            System.err.println(q);
+            System.err.println("Question no. : " + q.getId());
+            System.err.println(q.getQuestion());
+            System.err.println(q.getOpt1());
+            System.err.println(q.getOpt2());
+            System.err.println(q.getOpt3());
+            System.err.println(q.getOpt4());
+            
+            // bad solution better use out of cicle
+            Scanner sc = new Scanner(System.in);
+
+            selection[i] = sc.nextLine();
+
+            i++;
+        }
+
+        for(String s : selection) {
+            System.err.println("your answer is : " + s);
         }
     }
 }
