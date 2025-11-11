@@ -8,7 +8,10 @@ public class Enum {
     public static void main(String a[]) {
         Status s = Status.Successs;
 
+        int numOfS = s.ordinal();
+
         System.err.println(s);
+        System.err.println("numOfS : " + numOfS);
 
         Status[] ss = Status.values();
 
