@@ -9,12 +9,24 @@ interface A {
     void config();
 }
 
-class B implements A {
+interface X {
+    void run();
+}
+
+interface Y extends X {
+
+}
+
+class B implements A, Y {
     public void show() {
         System.err.println("In show");
     }
 
     public void config() {
+        System.err.println("In config");
+    }
+
+    public void run() {
         System.err.println("In config");
     }
 }
@@ -25,6 +37,10 @@ public class Interface {
 
         obj.show();
         obj.config();
+        // obj.run(); A doesn't know about run()
+
+        X obj1 = new B();
+        obj1.run();
 
         System.err.println(A.area);
     }
