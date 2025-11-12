@@ -2,18 +2,17 @@ package anonymousClass;
 
 
 abstract class A {
-
-    public abstract void show();
-    public abstract void conf();
+    abstract void show();
+    abstract void conf();
 }
 
 public class InnerAnonymousClass {
     public static void main(String a[]) {
         A obj = new A(){
-            public void show() {
+            void show() {
                 System.err.println("In anonmous ");
             }
-            public void conf() {
+            void conf() {
                 System.err.println("In anonmous ");
             }
         };
