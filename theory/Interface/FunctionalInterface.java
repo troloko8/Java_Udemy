@@ -2,7 +2,8 @@ package Interface;
 
 // @FunctionalInterface
 interface A {
-    void show(int i);
+    // void show(int i);
+    int show(int i, int j);
 }
 
 // class B implements A {
@@ -22,8 +23,10 @@ public class FunctionalInterface {
 
         // Lambda expression
 
-        A obj = i -> System.err.println("In show " + i);
+        // A obj = i -> System.err.println("In show " + i);
+        A obj = (i, j) -> i + j;
 
-        obj.show(109);
+        obj.show(109, 108);
+        System.err.println(obj.show(109, -108));
     }
 }
