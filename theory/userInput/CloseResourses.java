@@ -24,6 +24,8 @@ public class CloseResourses {
         // in this case bf.close() calls automaticly
         try(BufferedReader bf = new BufferedReader(new InputStreamReader(System.in))) {
             num = Integer.parseInt(bf.readLine());
+
+            System.err.println(num);
         }
 
     }
