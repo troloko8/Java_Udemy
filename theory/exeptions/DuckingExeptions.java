@@ -11,7 +11,6 @@ class A {
         // }
 
         Class.forName(className);
-
     }
 }
 
