@@ -1,5 +1,11 @@
 package exeptions;
 
+class CustomExeptions extends Exception{
+    public CustomExeptions(String str) {
+        super(str);
+    }
+}
+
 // exeptions are run time error
 public class Exeptions {
     public static void main(String a[]) {
@@ -10,9 +16,18 @@ public class Exeptions {
         String str = null;
 
         try {
-            j = 18/2;
-            System.err.println(arr[5]);
-            System.err.println(str.length());
+            // j = 18/2;
+            // System.err.println(arr[5]);
+            // System.err.println(str.length());
+
+            j = 18 / 20;
+
+            if (j == 0) {
+                throw new CustomExeptions("j can't be a zero");
+            }
+        } catch (CustomExeptions e) {
+            j = 18 / 1;
+            System.err.println("That is default output" + e);
         } catch (ArithmeticException e) {
             System.err.println("Cannot divide by 0 " + e);
         } catch (ArrayIndexOutOfBoundsException e) {
