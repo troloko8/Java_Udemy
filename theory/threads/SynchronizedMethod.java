@@ -1,5 +1,7 @@
 package threads;
 
+import java.util.Set;
+
 class Counter {
     int count;
 
