@@ -3,6 +3,7 @@ package udemy_java;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -61,15 +62,25 @@ public class App {
             // UPDATING DATA
             // String sql = "update student set \"sName\"='Max' where \"sID\"=3 ";
             // DELETING
-            String sql = "delete from student where \"sID\"=3 ";
+            // String sql = "delete from student where \"sID\"=3 ";
 
+            // boolean status = st.execute(sql);
 
+            // System.err.println(status);
 // - - - - - - - - - - - - - - 
-            //PROBLEM WITH STATEMENT
+            //prepared statement
 
-            boolean status = st.execute(sql);
+            int sID = 101;
+            String sName = "Dig";
+            int marks = 60;
+            String sql = "insert into student values (?,?,?)";
             
-            System.err.println(status);
+            PreparedStatement pst = con.prepareStatement(sql);
+                pst.setInt(1, sID);
+                pst.setString(2, sName);
+                pst.setInt(3, marks);
+
+            pst.execute();
 
             con.close();    
         } catch (SQLException e) {
