@@ -30,16 +30,29 @@ public class App {
             e.printStackTrace();
         }
 
-        String sql = "SELECT \"sName\" FROM student WHERE \"sID\" = 1"; // Исправленный SQL-запрос
+        // String sql = "SELECT \"sName\" FROM student WHERE \"sID\" = 1";
+
+        String sql = "SELECT * FROM student";
         Statement st = null;
         ResultSet res = null;
         
         try {
             st = con.createStatement();
             res = st.executeQuery(sql);
-            res.next();
-            String name = res.getString("sName");
-            System.err.println("Name of the student is " + name);
+
+            // res.next();
+            // String name = res.getString("sName");
+            // System.err.println("Name of the student is " + name);
+
+
+            //take whle data
+
+            while (res.next()) {
+                System.err.print(res.getInt(1) + " - ");
+                System.err.print(res.getString(2) + " - ");
+                System.err.println(res.getInt(3));
+            }
+
             con.close();    
         } catch (SQLException e) {
             e.printStackTrace();
