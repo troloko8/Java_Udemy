@@ -1,6 +1,11 @@
 package udemy_java;
 
-public class Student {
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity // for hibernate to recognize this class as an entity
+public class StudentHibrnate {
+    @Id // primary key for the entity for hibernate
     int rollNo;
     String name;
     int age;
