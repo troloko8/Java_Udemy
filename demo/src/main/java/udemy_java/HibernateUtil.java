@@ -19,8 +19,8 @@ public class HibernateUtil {
             cfg.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
             cfg.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/postgres");
             cfg.setProperty("hibernate.connection.username", "postgres");
-            // cfg.setProperty("hibernate.connection.password", "1111");
-            cfg.setProperty("hibernate.connection.password", "1001");
+            cfg.setProperty("hibernate.connection.password", "0000");
+            // cfg.setProperty("hibernate.connection.password", "1001");
 
             // Hibernate
             cfg.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");

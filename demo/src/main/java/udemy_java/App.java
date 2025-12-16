@@ -8,9 +8,11 @@ public class App {
         // DemoJDBC.main();
 
         StudentHibrnate s1 = new StudentHibrnate();
-        s1.setName("ДДАРТ ВЕЙДЕР");
+        s1.setName("LALA2");
         s1.setRollNo(2);
-        s1.setAge(10);
+        s1.setAge(11);
+
+        StudentHibrnate s2 = null;
 
         // Сохраняем SessionFactory в локальной переменной
         var sessionFactory = HibernateUtil.getSessionFactory();
@@ -18,11 +20,14 @@ public class App {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
 
-            // Вместо .save
-            session.persist(s1);
-            session.getTransaction().commit();
+            // session.persist(s1);
+            // session.getTransaction().commit();
 
-            System.err.println(s1);
+            // System.err.println(s1);
+
+            s2 = session.find(StudentHibrnate.class, 2);
+            
+            System.err.println(s2);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
