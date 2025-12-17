@@ -36,6 +36,7 @@ public class HibernateUtil {
 
             // Entities
             cfg.addAnnotatedClass(StudentHibrnate.class);
+            cfg.addAnnotatedClass(Alien.class);
 
             StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
                 .applySettings(cfg.getProperties());
