@@ -5,19 +5,21 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
+import udemy_java.clasess.Laptop;
 
 @Entity
 // changing table name in hibernate logic hence in DB too
-@Table(name="alien_table")
+// @Table(name="alien_table")
 public class Alien {
     @Id
     private int aid;
     // change the name of column 
-    @Column(name="alien_name")
+    // @Column(name="alien_name")
     private String aname;
     // ignoring this var when create a columns
-    @Transient
+    // @Transient
     private String tech;
+    private Laptop laptop;
 
     public int getAid() {
         return aid;
@@ -34,12 +36,20 @@ public class Alien {
     public String getTech() {
         return tech;
     }
+
     public void setTech(String tech) {
         this.tech = tech;
     }
 
+    public Laptop getLaptop() {
+        return laptop;
+    }
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
+
     @Override
     public String toString() {
-        return "Alien [aid=" + aid + ", aname=" + aname + ", tech=" + tech + "]";
+        return "Alien [aid=" + aid + ", aname=" + aname + ", tech=" + tech + ", laptop=" + laptop + "]";
     }
 }

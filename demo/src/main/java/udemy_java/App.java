@@ -18,19 +18,20 @@ public class App {
         a1.setAid(1);
         a1.setAname("Nathan");
         a1.setTech("JS");
+        a1.setLaptop(new udemy_java.clasess.Laptop());
+        a1.getLaptop().setBrand("Apple");
+        a1.getLaptop().setModel("MacBook Pro");
+        a1.getLaptop().setRam(16);
 
 
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
 
-            // CREATE
             session.persist(a1);
             session.getTransaction().commit();
-            // System.err.println(s1);
 
-            // GET
-            // s2 = session.find(StudentHibrnate.class, 2);
-            // System.err.println(s2);
+            Alien s2 = session.find(Alien.class, 1);
+            System.err.println(s2);
 
         } catch (Exception e) {
             e.printStackTrace();
