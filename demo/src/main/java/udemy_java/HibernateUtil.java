@@ -4,6 +4,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import udemy_java.clasess.Laptop;
+
 public class HibernateUtil {
 
     private static final SessionFactory sessionFactory = buildSessionFactory();
@@ -38,6 +40,7 @@ public class HibernateUtil {
             // Entities
             cfg.addAnnotatedClass(StudentHibrnate.class);
             cfg.addAnnotatedClass(Alien.class);
+            cfg.addAnnotatedClass(Laptop.class);
 
             StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
                 .applySettings(cfg.getProperties());

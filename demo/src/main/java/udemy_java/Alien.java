@@ -3,6 +3,7 @@ package udemy_java;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import udemy_java.clasess.Laptop;
@@ -19,6 +20,8 @@ public class Alien {
     // ignoring this var when create a columns
     // @Transient
     private String tech;
+    // that means one to one mapping and each alien has one laptop which gets stored in separate table in DB
+    @OneToOne
     private Laptop laptop;
 
     public int getAid() {

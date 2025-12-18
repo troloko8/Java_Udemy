@@ -2,13 +2,24 @@ package udemy_java.clasess;
 
 import jakarta.persistence.Embeddable;
 // Marking as embeddable class for embedding in another entity
-@Embeddable
+// @Embeddable
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Laptop {
+    @Id
+    private int lid;
     private String brand;
     private String model;
     private int ram;
 
-
+    public int getLid() {
+        return lid;
+    }
+    public void setLid(int lid) {
+        this.lid = lid;
+    }
     public int getRam() {
         return ram;
     }
@@ -35,6 +46,6 @@ public class Laptop {
 
     @Override
     public String toString() {
-        return "Laptop [ram=" + ram + ", brand=" + brand + ", model=" + model + "]";
+        return "Laptop [lid=" + lid + ", brand=" + brand + ", model=" + model + ", ram=" + ram + "]";
     }
 }
