@@ -1,8 +1,11 @@
 package udemy_java;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
@@ -21,8 +24,15 @@ public class Alien {
     // @Transient
     private String tech;
     // that means one to one mapping and each alien has one laptop which gets stored in separate table in DB
-    @OneToOne
-    private Laptop laptop;
+    // @OneToOne
+    // private Laptop laptop;
+
+    // one to many mapping
+    // @OneToMany
+
+    // if we will not want to create a separate join table for mapping
+    @OneToMany(mappedBy = "alien")
+    private List<Laptop> laptops;
 
     public int getAid() {
         return aid;
@@ -44,15 +54,15 @@ public class Alien {
         this.tech = tech;
     }
 
-    public Laptop getLaptop() {
-        return laptop;
+    public List<Laptop> getLaptops() {
+        return laptops;
     }
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
+    public void setLaptops(List<Laptop> laptops) {
+        this.laptops = laptops;
     }
 
     @Override
     public String toString() {
-        return "Alien [aid=" + aid + ", aname=" + aname + ", tech=" + tech + ", laptop=" + laptop + "]";
+        return "Alien [aid=" + aid + ", aname=" + aname + ", tech=" + tech + ", laptops=" + laptops + "]";
     }
 }
