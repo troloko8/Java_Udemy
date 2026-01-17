@@ -5,8 +5,6 @@ import org.hibernate.SessionFactory;
 
 public class CRUDHibernate {
     public static void run(SessionFactory sessionFactory) {
-
-
         StudentHibrnate s1 = new StudentHibrnate();
         s1.setName("LALA2");
         s1.setRollNo(2);

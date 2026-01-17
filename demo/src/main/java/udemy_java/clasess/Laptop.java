@@ -1,5 +1,7 @@
 package udemy_java.clasess;
 
+import java.util.List;
+
 import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Embeddable;
@@ -7,6 +9,7 @@ import jakarta.persistence.Embeddable;
 // @Embeddable
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import udemy_java.Alien;
 
@@ -19,8 +22,11 @@ public class Laptop {
     private int ram;
 
     // if we want reference to Alien class here
-    @ManyToOne
-    private Alien alien;
+    // @ManyToOne
+    // private Alien alien;
+
+    @ManyToMany(mappedBy = "laptops")
+    private List<Alien> aliens;
 
     public int getLid() {
         return lid;
@@ -52,13 +58,22 @@ public class Laptop {
         this.model = model;
     }
 
-    public Alien getAlien() {
-        return alien;
-    }
-    public void setAlien(Alien alien) {
-        this.alien = alien;
+    // for one to many mapping
+    // public Alien getAlien() {
+    //     return alien;
+    // }
+    // public void setAlien(Alien alien) {
+    //     this.alien = alien;
+    // }
+
+    public List<Alien> getAliens() {
+        return aliens;
     }
 
+    public void setAliens(List<Alien> aliens) {
+        this.aliens = aliens;
+    }
+    
     @Override
     public String toString() {
         return "Laptop [lid=" + lid + ", brand=" + brand + ", model=" + model + ", ram=" + ram + "]";
