@@ -1,4 +1,4 @@
-package udemy_java;
+package udemy_java.clasess.actions;
 
 import java.sql.Statement;
 import java.sql.Connection;

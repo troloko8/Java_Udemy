@@ -1,4 +1,4 @@
-package udemy_java.clasess;
+package udemy_java.clasess.entities;
 
 import java.util.List;
 
@@ -11,7 +11,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import udemy_java.Alien;
 
 @Entity
 public class Laptop {

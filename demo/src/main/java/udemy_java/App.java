@@ -7,7 +7,9 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import udemy_java.clasess.Laptop;
+import udemy_java.clasess.actions.LazyAndEagerFetching;
+import udemy_java.clasess.actions.OneAndMany;
+import udemy_java.clasess.entities.Laptop;
 
 public class App {
     public static void main(String[] args) {
@@ -22,7 +24,6 @@ public class App {
 
         // One to One / One to Many mapping / many to many mapping
         // OneAndMany.run(sessionFactory);
-
 
         // Lazy and Eager fetching
         LazyAndEagerFetching.run(sessionFactory);

@@ -1,11 +1,12 @@
-package udemy_java;
+package udemy_java.clasess.actions;
 
 import java.util.Arrays;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import udemy_java.clasess.Laptop;
+import udemy_java.clasess.entities.Alien;
+import udemy_java.clasess.entities.Laptop;
 
 public class OneAndMany {
     public static void run(SessionFactory sessionFactory) {
@@ -47,9 +48,9 @@ public class OneAndMany {
         a2.setLaptops(Arrays.asList(l3, l2));
         a3.setLaptops(Arrays.asList(l1));
 
-        l1.setAliens(Arrays.asList(a1, a3));
-        l2.setAliens(Arrays.asList(a1, a2));
-        l3.setAliens(Arrays.asList(a2));
+        // l1.setAliens(Arrays.asList(a1, a3));
+        // l2.setAliens(Arrays.asList(a1, a2));
+        // l3.setAliens(Arrays.asList(a2));
 
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();

@@ -1,4 +1,4 @@
-package udemy_java;
+package udemy_java.clasess.entities;
 
 import java.util.List;
 
@@ -11,7 +11,6 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
-import udemy_java.clasess.Laptop;
 
 @Entity
 // changing table name in hibernate logic hence in DB too

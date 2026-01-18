@@ -1,7 +1,9 @@
-package udemy_java;
+package udemy_java.clasess.actions;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
+import udemy_java.clasess.entities.StudentHibrnate;
 
 public class CRUDHibernate {
     public static void run(SessionFactory sessionFactory) {

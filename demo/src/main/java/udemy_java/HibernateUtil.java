@@ -4,7 +4,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-import udemy_java.clasess.Laptop;
+import udemy_java.clasess.entities.Alien;
+import udemy_java.clasess.entities.Laptop;
+import udemy_java.clasess.entities.StudentHibrnate;
 
 public class HibernateUtil {
 

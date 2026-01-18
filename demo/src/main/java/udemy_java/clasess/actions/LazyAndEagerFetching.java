@@ -1,11 +1,12 @@
-package udemy_java;
+package udemy_java.clasess.actions;
 
 import java.util.Arrays;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import udemy_java.clasess.Laptop;
+import udemy_java.clasess.entities.Alien;
+import udemy_java.clasess.entities.Laptop;
 
 public class LazyAndEagerFetching {
     public static void run(SessionFactory sessionFactory) {

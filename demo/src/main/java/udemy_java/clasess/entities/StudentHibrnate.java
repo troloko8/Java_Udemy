@@ -1,4 +1,4 @@
-package udemy_java;
+package udemy_java.clasess.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
