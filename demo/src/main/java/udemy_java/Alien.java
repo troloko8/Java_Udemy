@@ -4,6 +4,7 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
@@ -34,7 +35,11 @@ public class Alien {
     // if we will not want to create a separate join table for mapping
     // @OneToMany(mappedBy = "alien")
 
-    @ManyToMany
+    //if we want many to many mapping
+    // @ManyToMany
+
+    // E.G. of Lazy/Eager fetching // by default it is LAZY
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Laptop> laptops;
 
     public int getAid() {

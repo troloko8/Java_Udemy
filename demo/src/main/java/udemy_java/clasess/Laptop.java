@@ -25,8 +25,11 @@ public class Laptop {
     // @ManyToOne
     // private Alien alien;
 
-    @ManyToMany(mappedBy = "laptops")
-    private List<Alien> aliens;
+    // for many to many mapping
+    // @ManyToMany(mappedBy = "laptops")
+
+    // E.G. of Lazy/Eager fetching
+    // private List<Alien> aliens;
 
     public int getLid() {
         return lid;
@@ -66,13 +69,13 @@ public class Laptop {
     //     this.alien = alien;
     // }
 
-    public List<Alien> getAliens() {
-        return aliens;
-    }
+    // public List<Alien> getAliens() {
+    //     return aliens;
+    // }
 
-    public void setAliens(List<Alien> aliens) {
-        this.aliens = aliens;
-    }
+    // public void setAliens(List<Alien> aliens) {
+    //     this.aliens = aliens;
+    // }
     
     @Override
     public String toString() {

@@ -21,8 +21,11 @@ public class App {
         // CRUDHibernate.run(sessionFactory);
 
         // One to One / One to Many mapping / many to many mapping
+        // OneAndMany.run(sessionFactory);
 
-        OneAndMany.run(sessionFactory);
+
+        // Lazy and Eager fetching
+        LazyAndEagerFetching.run(sessionFactory);
 
         try (Session session = sessionFactory.openSession()) {
             // session.beginTransaction();

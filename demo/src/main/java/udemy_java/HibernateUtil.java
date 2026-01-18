@@ -29,7 +29,7 @@ public class HibernateUtil {
             // cfg.setProperty("hibernate.hbm2ddl.auto", "update");
             cfg.setProperty("hibernate.hbm2ddl.auto", "create");
             cfg.setProperty("hibernate.show_sql", "true");
-            cfg.setProperty("hibernate.format_sql", "true");
+            // cfg.setProperty("hibernate.format_sql", "true");
 
             
             // Performance
