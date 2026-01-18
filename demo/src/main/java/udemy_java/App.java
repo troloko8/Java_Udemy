@@ -6,9 +6,13 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.annotations.processing.HQL;
+import org.hibernate.query.Query;
 
+import udemy_java.clasess.actions.HQLFetching;
 import udemy_java.clasess.actions.LazyAndEagerFetching;
 import udemy_java.clasess.actions.OneAndMany;
+import udemy_java.clasess.entities.Alien;
 import udemy_java.clasess.entities.Laptop;
 
 public class App {
@@ -26,11 +30,17 @@ public class App {
         // OneAndMany.run(sessionFactory);
 
         // Lazy and Eager fetching
-        LazyAndEagerFetching.run(sessionFactory);
+        // LazyAndEagerFetching.run(sessionFactory);
+
+        // HQL fetching data
+        HQLFetching.run(sessionFactory);
 
         try (Session session = sessionFactory.openSession()) {
             // session.beginTransaction();
 
+            // session.persist(l1);
+
+            // session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
