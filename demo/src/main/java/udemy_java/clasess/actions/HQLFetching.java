@@ -22,12 +22,29 @@ public class HQLFetching {
             //OLD ONE
             // Query query = session.createQuery("from Laptop");
             // query.getResultList();
+            //  - - - - - - - --  -
 
-            List<Laptop> list = session
-                .createSelectionQuery("from Laptop where ram=32", Laptop.class)
+            // String brand = "ASUS";
+            String brand = "Apple";
+
+            // List<Laptop> list = session
+            //     // .createSelectionQuery("from Laptop where ram=32", Laptop.class)
+            //     .createSelectionQuery("from Laptop where brand like ?1", Laptop.class)
+            //     .setParameter(1, brand)
+            //     .getResultList();
+
+            // System.out.println(list);
+
+            List<Object[]> list2 = session
+                .createSelectionQuery("select brand, model from Laptop where brand like ?1", Object[].class)
+                .setParameter(1, brand)
                 .getResultList();
 
-            System.out.println(list);
+            System.out.println(list2);
+
+            for (Object[] arr : list2) {
+                System.out.println("Brand: " + arr[0] + ", Model: " + arr[1]);
+            }
 
             // session.beginTransaction();
 
