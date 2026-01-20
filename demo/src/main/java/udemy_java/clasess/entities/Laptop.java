@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.annotations.ManyToAny;
 
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.Embeddable;
 // Marking as embeddable class for embedding in another entity
 // @Embeddable
@@ -13,6 +14,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
 @Entity
+@Cacheable
 public class Laptop {
     @Id
     private int lid;

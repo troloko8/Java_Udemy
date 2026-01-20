@@ -36,6 +36,17 @@ public class App {
         HQLFetching.run(sessionFactory);
 
         try (Session session = sessionFactory.openSession()) {
+            Laptop l1 = session.find(Laptop.class, 1);
+
+            System.out.println(l1);
+
+            session.close();
+
+            Session session2 = sessionFactory.openSession();
+            Laptop l2 = session2.find(Laptop.class, 1);
+
+            System.out.println(l2);
+            session2.close();
             // session.beginTransaction();
 
             // session.persist(l1);
