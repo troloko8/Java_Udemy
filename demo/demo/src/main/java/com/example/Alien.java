@@ -1,13 +1,22 @@
 package com.example;
 
+import java.beans.ConstructorProperties;
+
 public class Alien {
 
-    private Integer age;
+    private int age;
     private Laptop lap;
     
 
     public Alien() {
         System.err.println("Object created");
+    }
+
+    @ConstructorProperties({"age", "lap"})
+    public Alien(int age, Laptop lap) {
+        System.err.println("Age contructor called");
+        this.age = age;
+        this.lap = lap;
     }
     
     public void code() {

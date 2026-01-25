@@ -6,8 +6,26 @@
 
     <!-- <bean id="alien" class="com.example.Alien" scope="prototype"> -->
     <bean id="alien" class="com.example.Alien">
-        <property name="age" value="213"></property>
-        <property name="lap" ref="lap1"></property>
+        <!-- <constructor-arg value="21" />
+        <constructor-arg ref="lap1" /> -->
+
+        <!--   WITH type  -->
+
+        <!-- <constructor-arg value="21" type="int"/>
+        <constructor-arg ref="lap1" type="com.example.Laptop" /> -->
+
+        <!--   WITH index  -->
+
+        <!-- <constructor-arg ref="lap1" index="1" />
+        <constructor-arg value="21" index="0" /> -->
+
+        <!-- WITH name -->
+        <constructor-arg ref="lap1" name="lap" />
+        <constructor-arg value="21" name="age" />
+
+        <!--  -->
+        <!-- <property name="age" value="213"></property> -->
+        <!-- <property name="lap" ref="lap1"></property> -->
     </bean>
 
     <bean id="lap1" class="com.example.Laptop">
