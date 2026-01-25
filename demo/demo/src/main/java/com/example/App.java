@@ -7,10 +7,14 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        Alien alien1 = (Alien) context.getBean("alien");
+        alien1.age = 12;
+        alien1.code();
+        Alien alien2 = (Alien) context.getBean("alien");
 
-        ApplicationContext context = new ClassPathXmlApplicationContext();
-        Alien alien = (Alien) context.getBean("alien");
+        alien2.code();
+
 
     }
 }

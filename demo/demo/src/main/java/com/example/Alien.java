@@ -2,8 +2,13 @@ package com.example;
 
 public class Alien {
 
-    public void code() {
-        System.err.println("Code..");
+    Integer age;
+
+    public Alien() {
+        System.err.println("Object created");
     }
     
+    public void code() {
+        System.err.println("Age is " + age);
+    }
 }
