@@ -4,7 +4,9 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="alien" class="com.example.Alien" scope="prototype">
+    <!-- <bean id="alien" class="com.example.Alien" scope="prototype"> -->
+    <bean id="alien" class="com.example.Alien">
+        <property name="age" value="213"></property>
     </bean>
     <bean id="lap" class="com.example.Laptop">
     </bean>

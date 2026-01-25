@@ -11,4 +11,14 @@ public class Alien {
     public void code() {
         System.err.println("Age is " + age);
     }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        System.err.println("A age's setter is active");
+
+        this.age = age;
+    }
 }
