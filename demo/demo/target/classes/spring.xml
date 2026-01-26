@@ -32,11 +32,13 @@
 
         <!--  -->
         <property name="age" value="213"></property>
-        <property name="comp" ref="desk"></property>
+        <property name="comp" ref="lap1"></property>
     </bean>
 
-    <bean id="desk" class="com.example.Desktop">
+    <!-- <bean id="desk" class="com.example.Desktop"> -->
+    <bean class="com.example.Desktop">
     </bean>
+    
     <bean id="lap1" class="com.example.Laptop" primary="true" lazy-init="true">
     </bean>
 </beans>
