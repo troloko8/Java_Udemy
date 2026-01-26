@@ -37,6 +37,6 @@
 
     <bean id="desk" class="com.example.Desktop">
     </bean>
-    <bean id="lap1" class="com.example.Laptop" primary="true">
+    <bean id="lap1" class="com.example.Laptop" primary="true" lazy-init="true">
     </bean>
 </beans>
