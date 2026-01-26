@@ -8,9 +8,10 @@
     <bean 
         id="alien" 
         class="com.example.Alien" 
-        autowire="byName"
+        autowire="byType"
     >
         <!-- autowire="byType" -->
+        <!-- autowire="byName" -->
 
         <!-- <constructor-arg value="21" />
         <constructor-arg ref="lap1" /> -->
@@ -36,6 +37,6 @@
 
     <bean id="desk" class="com.example.Desktop">
     </bean>
-    <bean id="lap1" class="com.example.Laptop">
+    <bean id="lap1" class="com.example.Laptop" primary="true">
     </bean>
 </beans>
