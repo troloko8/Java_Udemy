@@ -5,31 +5,30 @@ import java.beans.ConstructorProperties;
 public class Alien {
 
     private int age;
-    private Laptop lap;
+    private Computer comp;
     
 
     public Alien() {
-        System.err.println("Object created");
+        // System.err.println("Object created");
     }
 
-    @ConstructorProperties({"age", "lap"})
-    public Alien(int age, Laptop lap) {
-        System.err.println("Age contructor called");
-        this.age = age;
-        this.lap = lap;
-    }
+    // @ConstructorProperties({"age", "comp"})
+    // public Alien(int age, Computer comp) {
+    //     System.err.println("Age contructor called");
+    //     this.age = age;
+    //     this.comp = comp;
+    // }
     
     public void code() {
-        lap.compile();
-        System.err.println("Age is " + age);
+        comp.compile();
     }
 
-    public Laptop getLap() {
-        return lap;
+    public Computer getcomp() {
+        return comp;
     }
 
-    public void setLap(Laptop lap) {
-        this.lap = lap;
+    public void setComp(Computer comp) {
+        this.comp = comp;
     }
 
     public Integer getAge() {

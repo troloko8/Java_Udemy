@@ -5,7 +5,13 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- <bean id="alien" class="com.example.Alien" scope="prototype"> -->
-    <bean id="alien" class="com.example.Alien">
+    <bean 
+        id="alien" 
+        class="com.example.Alien" 
+        autowire="byName"
+    >
+        <!-- autowire="byType" -->
+
         <!-- <constructor-arg value="21" />
         <constructor-arg ref="lap1" /> -->
 
@@ -20,14 +26,16 @@
         <constructor-arg value="21" index="0" /> -->
 
         <!-- WITH name -->
-        <constructor-arg ref="lap1" name="lap" />
-        <constructor-arg value="21" name="age" />
+        <!-- <constructor-arg ref="lap1" name="lap" /> -->
+        <!-- <constructor-arg value="21" name="age" /> -->
 
         <!--  -->
-        <!-- <property name="age" value="213"></property> -->
-        <!-- <property name="lap" ref="lap1"></property> -->
+        <property name="age" value="213"></property>
+        <property name="comp" ref="desk"></property>
     </bean>
 
+    <bean id="desk" class="com.example.Desktop">
+    </bean>
     <bean id="lap1" class="com.example.Laptop">
     </bean>
 </beans>
