@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 public class Alien {
 
     private int age;
-    @Autowired // to connect with class if we have just one such class
-    @Qualifier("desktop")
+    // @Autowired // to connect with class if we have just one such class
+    // @Qualifier("desktop")
     // also help @Primary
     private Computer comp;
     
