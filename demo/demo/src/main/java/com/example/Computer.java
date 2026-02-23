@@ -1,5 +1,5 @@
 package com.example;
 
-interface Computer {
+public interface Computer {
     public void compile();
 }
