@@ -14,8 +14,9 @@ public class App
 
         // Desktop dt = context.getBean(Desktop.class);
         Desktop dt = context.getBean("desktop",Desktop.class);
-
         dt.compile();
+        Desktop dt2 = context.getBean("desktop",Desktop.class);
+        dt2.compile();
 
 
         // XML CONFIG
