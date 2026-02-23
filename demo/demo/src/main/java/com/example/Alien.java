@@ -2,12 +2,17 @@ package com.example;
 
 import java.beans.ConstructorProperties;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Alien {
 
     private int age;
+    @Autowired // to connect with class if we have just one such class
+    @Qualifier("desktop")
+    // also help @Primary
     private Computer comp;
     
 
@@ -30,6 +35,7 @@ public class Alien {
         return comp;
     }
 
+    @Autowired // also can do here not good practice
     public void setComp(Computer comp) {
         this.comp = comp;
     }
