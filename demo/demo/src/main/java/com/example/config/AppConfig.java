@@ -9,6 +9,7 @@ import com.example.Desktop;
 @Configuration
 public class AppConfig {
 
+    // @Bean(name = {"desktop1", "com2", "beast"}) // for multinames
     @Bean
     public Desktop desktop() {
         return new Desktop();
