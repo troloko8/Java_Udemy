@@ -2,6 +2,9 @@ package com.example;
 
 import java.beans.ConstructorProperties;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Alien {
 
     private int age;

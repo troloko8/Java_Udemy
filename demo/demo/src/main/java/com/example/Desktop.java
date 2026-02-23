@@ -1,5 +1,8 @@
 package com.example;
 
+import org.springframework.stereotype.Component;
+
+@Component // instead of creating the @Bean in appConfig file
 public class Desktop implements Computer {
 
     public Desktop() {
