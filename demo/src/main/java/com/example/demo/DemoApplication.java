@@ -9,7 +9,9 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
 
-		context.getBean(Alien.class).code();
+		Alien obj = context.getBean(Alien.class);
+		System.err.println(obj.getAge());
+		obj.code();
 	}
 
 }
