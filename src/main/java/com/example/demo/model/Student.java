@@ -9,6 +9,7 @@ public class Student {
     private int rollNum;
     private String name;
     private int mark;
+    
     public int getRollNum() {
         return rollNum;
     }
