@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Laptop;
+import com.example.demo.repo.LaptopRepository;
 
 @Service
 public class LaptopService {
