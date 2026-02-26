@@ -26,7 +26,5 @@ public class StudentService {
 
     public List<Student> getStudents() {
         return repo.findAll();
-        // TODO Auto-generated method stub
-        // throw new UnsupportedOperationException("Unimplemented method 'getStudents'");
     }
 }

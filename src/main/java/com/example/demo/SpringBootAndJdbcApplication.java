@@ -17,7 +17,7 @@ public class SpringBootAndJdbcApplication {
 
 		Student st = context.getBean(Student.class);
 
-		st.setRollNum(101);
+		st.setRollNum(104);
 		st.setMark(99);
 		st.setName("Nafty");
 
