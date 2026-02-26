@@ -3,6 +3,8 @@ package com.example.demo.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.Student;
@@ -10,8 +12,23 @@ import com.example.demo.model.Student;
 @Repository
 public class StudentRepo {
 
+    private JdbcTemplate jdbc;
+
+    public JdbcTemplate getJdbc() {
+        return jdbc;
+    }
+
+    @Autowired
+    public void setJdbc(JdbcTemplate jdbc) {
+        this.jdbc = jdbc;
+    }
+
     public void save(Student s) {
-        System.err.println("Added");
+        String sql = "insert into student (rollno, name, marks) values (?, ?, ?)";   
+        int rows = jdbc.update(sql, s.getRollNum(), s.getName(), s.getMark());
+
+        System.err.println("Added " + rows );
+
     }
 
     public List<Student> findAll() {
