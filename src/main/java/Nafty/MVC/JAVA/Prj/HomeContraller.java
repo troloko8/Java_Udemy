@@ -2,6 +2,7 @@ package Nafty.MVC.JAVA.Prj;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -9,7 +10,6 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class HomeContraller {
-
     @RequestMapping("/")
     public String home() {
         System.err.println(" -- -- -  - -HEOLLO");
@@ -17,11 +17,17 @@ public class HomeContraller {
     }
 
     @RequestMapping("add")
-    public String add(HttpServletRequest req, HttpSession session) {
+    // public String add(HttpServletRequest req, HttpSession session) {
+    // public String add(int num1, int num2, HttpSession session) {// destructorization
+    public String add( 
+        @RequestParam("num1") int a, 
+        @RequestParam("num2") int b, 
+        HttpSession session) {// destructorization
 
-        int num1 = Integer.parseInt(req.getParameter("num1"));
-        int num2 = Integer.parseInt(req.getParameter("num2"));
-        int result = num1 + num2;
+        // int num1 = Integer.parseInt(req.getParameter("num1"));
+        // int num2 = Integer.parseInt(req.getParameter("num2"));
+        // int result = num1 + num2;
+        int result = a + b;
 
         session.setAttribute("result", result);
 
