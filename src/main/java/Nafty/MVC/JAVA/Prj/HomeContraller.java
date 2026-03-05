@@ -14,7 +14,6 @@ import jakarta.servlet.http.HttpSession;
 public class HomeContraller {
     @RequestMapping("/")
     public String home() {
-        System.err.println(" -- -- -  - -HEOLLO");
         return "index";
     }
 
@@ -49,6 +48,26 @@ public class HomeContraller {
         int result = a + b;
 
         mv.addObject("result", result);
+        mv.setViewName("result");
+
+        return mv;
+    }
+
+    @RequestMapping("addAlien")
+    public ModelAndView add( 
+        @RequestParam("aid") int aid, 
+        @RequestParam("aname") String aname, 
+        ModelAndView mv
+    ) {
+
+        Alien alien = new Alien();
+
+        alien.setAid(aid);
+        alien.setAname(aname);
+
+        System.err.println(alien);
+
+        mv.addObject("alien", alien);
         mv.setViewName("result");
 
         return mv;

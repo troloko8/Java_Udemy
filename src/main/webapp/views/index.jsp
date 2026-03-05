@@ -6,7 +6,19 @@
 <body>
     <h1>CALC</h1>
 
-    <form action="add">
+    <form action="addAlien">
+        <label for="aid">Enter an ID</label>
+        </br>
+        <input type="text" id="aid" name="aid"></input>
+        </br>
+        <label for="aname">Enter a name</label>
+        </br>
+        <input type="text" id="aname" name="aname"></input>
+        </br>
+        <input name="submit" type="submit">
+
+    </form>
+    <!-- <form action="add">
         <label for="num1">Enter 1st num</label>
         </br>
         <input type="text" id="num1" name="num1"></input>
@@ -17,6 +29,6 @@
         </br>
         <input name="submit" type="submit">
 
-    </form>
+    </form> -->
 </body>
 </html>
