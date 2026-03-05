@@ -2,6 +2,7 @@ package Nafty.MVC.JAVA.Prj;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -53,23 +54,38 @@ public class HomeContraller {
         return mv;
     }
 
+    //OLD
+    // @RequestMapping("addAlien")
+    // public ModelAndView add( 
+    //     @RequestParam("aid") int aid, 
+    //     @RequestParam("aname") String aname, 
+    //     ModelAndView mv
+    // ) {
+    //     Alien alien = new Alien();
+
+    //     alien.setAid(aid);
+    //     alien.setAname(aname);
+
+    //     System.err.println(alien);
+
+    //     mv.addObject("alien", alien);
+    //     mv.setViewName("result");
+
+    //     return mv;
+    // }
+
+    // 
+
+    @ModelAttribute("course")
+    public String courseName()  {
+        return "Java";
+    }
+
     @RequestMapping("addAlien")
-    public ModelAndView add( 
-        @RequestParam("aid") int aid, 
-        @RequestParam("aname") String aname, 
-        ModelAndView mv
+    public String add( 
+        // @ModelAttribute("alienName") Alien alien // Optinal
+        Alien alien
     ) {
-
-        Alien alien = new Alien();
-
-        alien.setAid(aid);
-        alien.setAname(aname);
-
-        System.err.println(alien);
-
-        mv.addObject("alien", alien);
-        mv.setViewName("result");
-
-        return mv;
+        return "result";
     }
 }
