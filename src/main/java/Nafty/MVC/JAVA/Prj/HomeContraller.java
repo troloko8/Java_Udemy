@@ -14,7 +14,7 @@ public class HomeContraller {
     @RequestMapping("/")
     public String home() {
         System.err.println(" -- -- -  - -HEOLLO");
-        return "index.jsp";
+        return "index";
     }
 
     @RequestMapping("add")
@@ -36,6 +36,6 @@ public class HomeContraller {
         model.addAttribute("result", result);
 
         System.err.println("res :" + result);
-        return "result.jsp";
+        return "result";
     }
 }
