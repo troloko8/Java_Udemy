@@ -1,12 +1,13 @@
-package Nafty.MVC.JAVA.Prj;
+package cnaftyDemo.jopProject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MvcJavaPrjApplication {
+public class JopProjectApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(MvcJavaPrjApplication.class, args);
+		SpringApplication.run(JopProjectApplication.class, args);
 	}
 
 }
