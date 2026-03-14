@@ -1,10 +1,12 @@
 package com.telusko.JobApp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.telusko.JobApp.model.JobPost;
 import com.telusko.JobApp.service.JobService;
@@ -33,11 +35,17 @@ public class JobController {
         return "success";
     }
 
-    // @RequestMapping({"/", "/home"})
-    // public String home() {
-    //     return "home";
-    // }
+    @RequestMapping("viewalljobs")
+    public String viewjobs(Model model) {
+        List<JobPost> jobs = service.getAllJobs();
 
+        for (JobPost jobPost : jobs) {
+            System.err.println(jobPost);
+        }
 
+        model.addAttribute("jobPosts", jobs);
+
+        return "viewalljobs";
+    }
 }
 
