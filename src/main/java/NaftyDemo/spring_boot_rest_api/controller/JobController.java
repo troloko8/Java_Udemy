@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import NaftyDemo.spring_boot_rest_api.model.JobPost;
 import NaftyDemo.spring_boot_rest_api.service.JobService;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -39,12 +41,21 @@ public class JobController {
 
     @GetMapping("jobPost/{postID}")
     public JobPost getMethodName(
-        // @PathVariable // In order to indetify that this is the var from the path
+        // @PathVariable // In order to indetify that this is the var from the path params
         @PathVariable("postID")
         int id
     ) {
         return service.getJob(id);
     }
-    
+
+    @PostMapping("jobPost")
+    public JobPost addJob(
+        @RequestBody  //  In order to indetify that this is the body of req
+        JobPost jobpost
+    ) {
+        service.addJob(jobpost);
+
+        return jobpost;
+    }
 }
 

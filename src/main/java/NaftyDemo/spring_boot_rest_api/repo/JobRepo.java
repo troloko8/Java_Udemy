@@ -47,7 +47,6 @@ public class JobRepo {
 
     public void addPost(JobPost job) {
         jobs.add(job);
-        System.err.println(jobs);
     }
 
     public JobPost getJob(int postID) {
