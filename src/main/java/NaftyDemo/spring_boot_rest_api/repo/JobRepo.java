@@ -40,6 +40,7 @@ public class JobRepo {
             new JobPost(10, "AI Engineer", "Building AI systems", 3,
                     Arrays.asList("Python", "PyTorch", "NLP"))
         ));
+        public Object updateJob;
 
     public List<JobPost> getAllJobs() {
         return jobs;
@@ -60,4 +61,23 @@ public class JobRepo {
         return null;
     }
 
+    public void updateJob(JobPost jobPost) {
+
+        for (JobPost job : jobs) {
+            if (job.getPostId() == jobPost.getPostId()) {
+                job.setPostDesc(jobPost.getPostDesc());
+                job.setPostProfile(jobPost.getPostProfile());
+                job.setPostTechStack(jobPost.getPostTechStack());
+                job.setReqExperience(jobPost.getReqExperience());
+            }
+        }
+    }
+
+    public void deleteJob(int id) {
+        for (JobPost job : jobs) {
+            if (job.getPostId() == id) {
+                jobs.remove(job);
+            }
+        }
+    }
 }
