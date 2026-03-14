@@ -50,6 +50,9 @@ public class JobController {
         return service.getJob(id);
     }
 
+    // Content negotiation
+    // @PostMapping(path = "jobPost", consumes = "application/xml") // or "application/json"
+    // @PostMapping(path = "jobPost", produces =  = "application/xml") // or "application/json"
     @PostMapping("jobPost")
     public JobPost addJob(
         @RequestBody  //  In order to indetify that this is the body of req
