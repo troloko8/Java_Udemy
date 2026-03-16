@@ -1,10 +1,10 @@
-package NaftyDemo.spring_boot_rest_api;
+package springBootJPA.JPA_JDBS;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootRestApiApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {
