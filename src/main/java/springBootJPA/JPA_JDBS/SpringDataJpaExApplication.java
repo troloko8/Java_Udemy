@@ -1,6 +1,8 @@
 package springBootJPA.JPA_JDBS;
 
+import java.lang.foreign.Linker.Option;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -39,14 +41,17 @@ public class SpringDataJpaExApplication {
 		// repo.save(s2);
 		// repo.save(s3);
 
-		List<Student> students = repo.findAll();
+		//  - - - - - --
 
-		for (Student student : students) {
-			System.err.println(student);	
-		}
+		// System.err.println("- - - - - - - - HERE 22 ");
+		// System.err.println(repo.findAll());
+		//  - - - - - --
 
-		System.err.println("- - - - - - - - HERE 22 ");
-		System.err.println(repo.findAll());
+		Optional<Student> s = repo.findById(103);
+		Optional<Student> s2 = repo.findById(104);
+
+		System.err.println(s);
+		System.err.println(s2);
 	}
 
 }
