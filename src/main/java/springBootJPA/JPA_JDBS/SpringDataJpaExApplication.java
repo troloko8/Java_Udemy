@@ -45,13 +45,25 @@ public class SpringDataJpaExApplication {
 
 		// System.err.println("- - - - - - - - HERE 22 ");
 		// System.err.println(repo.findAll());
+
 		//  - - - - - --
 
-		Optional<Student> s = repo.findById(103);
-		Optional<Student> s2 = repo.findById(104);
+		// Optional<Student> s = repo.findById(103);
+		// Optional<Student> s2 = repo.findById(104);
 
-		System.err.println(s);
-		System.err.println(s2);
+		// System.err.println(s);
+		// System.err.println(s2);
+
+		//  - - - - - --
+
+		System.err.println(repo.findByName("Navin"));
+		System.err.println(repo.findByMarks(75));
+		System.err.println(repo.findByMarksGreaterThan(77));
+
+		//  - - - - - --
+
+		//  - - - - - --
+
 	}
 
 }
