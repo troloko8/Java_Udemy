@@ -73,5 +73,7 @@ public class JobService {
         ));
 
         repo.saveAll(jobs);
+
+        return "Succes";
     }
 }
