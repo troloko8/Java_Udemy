@@ -89,7 +89,7 @@ public class JobController {
         return "sucess";
     }
 
-    @GetMapping("jobPost/keyword/{keyword}")
+    @GetMapping("jobPosts/keyword/{keyword}")
     public List<JobPost> searchByKeyword(
         @PathVariable
         String keyword
