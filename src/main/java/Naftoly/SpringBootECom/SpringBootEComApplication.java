@@ -1,13 +1,13 @@
-package NaftyDemo.spring_boot_rest_api;
+package Naftoly.SpringBootECom;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootRestApiApplication {
+public class SpringBootEComApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootRestApiApplication.class, args);
+		SpringApplication.run(SpringBootEComApplication.class, args);
 	}
 
 }
