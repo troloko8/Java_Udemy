@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 
 
@@ -34,6 +35,7 @@ public class ProductController {
     public ResponseEntity<List<Product>> getProducts() {
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
     }
+
     @GetMapping("/product/{id}")
     public ResponseEntity<Product> getProductById(
         @PathVariable int id
@@ -104,5 +106,16 @@ public class ProductController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/products/search")
+    public ResponseEntity<List<Product>> searchProducts(
+        @RequestParam String keyword
+    ) {
+        System.err.println("keyword : " + keyword);
+
+        List<Product> products = productService.searchProducts(keyword);
+
+        return new ResponseEntity<>(products, HttpStatus.OK);
     }
 }
