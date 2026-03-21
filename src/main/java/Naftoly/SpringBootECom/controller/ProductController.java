@@ -32,7 +32,6 @@ public class ProductController {
     public ResponseEntity<List<Product>> getProducts() {
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
     }
-
     @GetMapping("/product/{id}")
     public ResponseEntity<Product> getProductById(
         @PathVariable int id
@@ -41,6 +40,19 @@ public class ProductController {
 
         if(prod != null) {
             return new ResponseEntity<>(prod, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/product/{productId}/image")
+    public ResponseEntity<byte[]> getImageByProductId(
+        @PathVariable int productId
+    ) {
+        Product prod = productService.getProductById(productId);
+
+        if(prod != null) {
+            return new ResponseEntity<>(prod.getImageData(), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
