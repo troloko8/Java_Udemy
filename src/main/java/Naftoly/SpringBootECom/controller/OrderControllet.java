@@ -39,7 +39,7 @@ public class OrderControllet {
     }
 
 
-    @GetMapping("/orders")
+    @GetMapping("")
     public ResponseEntity<List<OrderResponse>> getAllOrders() {
         List<OrderResponse> orderResponses = orderService.getAllOrdersResponses();
         return new ResponseEntity<>(orderResponses, HttpStatus.OK);
