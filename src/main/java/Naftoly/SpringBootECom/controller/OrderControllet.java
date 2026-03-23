@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/orders")
 @CrossOrigin
 public class OrderControllet {
 
@@ -32,7 +32,7 @@ public class OrderControllet {
     @PostMapping("/place")
     public ResponseEntity<OrderResponse> placeOrder(@RequestBody OrderRequest orderRequest) {
 
-        OrderResponse orderResponse = null;
+        OrderResponse orderResponse = orderService.orderPlace(orderRequest);
 
         return new ResponseEntity<>(orderResponse, HttpStatus.CREATED);
 
