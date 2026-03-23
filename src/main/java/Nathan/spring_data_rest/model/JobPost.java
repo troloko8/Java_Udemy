@@ -21,6 +21,4 @@ public class JobPost {
 	private String postDesc;
 	private Integer reqExperience;
 	private List<String> postTechStack;
-	
-
 }
