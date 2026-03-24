@@ -17,7 +17,12 @@ public class LoggingAspect {
     // all all.all ..all
 
     // @Before("execution(* *.*(..))")
-    @Before("execution(* Naftoly.SpringBootECom.service.ProductService.*(..))")
+    // @Before("execution(* Naftoly.SpringBootECom.service.ProductService.*(..))")
+    // public void logMethodCall(JoinPoint joinPoint) {
+    //     LOGGER.info("Entering method: " + joinPoint);
+    // }
+
+    @Before("execution(* Naftoly.SpringBootECom.service.ProductService.getProductById(..)) || execution(* Naftoly.SpringBootECom.service.ProductService.getAllProducts(..))")
     public void logMethodCall(JoinPoint joinPoint) {
         LOGGER.info("Entering method: " + joinPoint);
     }
