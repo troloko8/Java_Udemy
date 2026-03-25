@@ -1,10 +1,10 @@
-package Naftoly.SpringBootECom;
+package Nathan.spring_security;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootEComApplicationTests {
+class SpringSecurityApplicationTests {
 
 	@Test
 	void contextLoads() {
