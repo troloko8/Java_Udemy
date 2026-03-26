@@ -24,11 +24,12 @@ public class SecurityConfiguration   {
         // };
 
         // lambda solution
-        http.csrf(customizer -> customizer.disable());
-        http.authorizeHttpRequests(requsts -> requsts.anyRequest().authenticated());
-        http.formLogin(Customizer.withDefaults());
-        http.httpBasic(Customizer.withDefaults());
-        http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        http
+            .csrf(customizer -> customizer.disable())
+            .authorizeHttpRequests(requsts -> requsts.anyRequest().authenticated())
+            .formLogin(Customizer.withDefaults())
+            .httpBasic(Customizer.withDefaults())
+            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         return http.build();
     }
