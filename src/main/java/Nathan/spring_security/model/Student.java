@@ -1,4 +1,4 @@
-package Nathan.spring_security;
+package Nathan.spring_security.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
