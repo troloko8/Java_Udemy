@@ -23,7 +23,7 @@ public class SecurityConfiguration   {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
+           return new BCryptPasswordEncoder(12);
     }
 
     @Autowired
@@ -42,11 +42,7 @@ public class SecurityConfiguration   {
     @Bean
     public AuthenticationProvider authProvider(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider(userDetailsService);
-
-        provider.setPasswordEncoder(new BCryptPasswordEncoder(12));
-        // provider.setPasswordEncoder(passwordEncoder);
-        
-
+        provider.setPasswordEncoder(passwordEncoder);
         return provider;
     }
     

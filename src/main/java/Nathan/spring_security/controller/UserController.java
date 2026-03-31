@@ -3,6 +3,7 @@ package Nathan.spring_security.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import Nathan.spring_security.model.User;
+import Nathan.spring_security.service.JwtService;
 import Nathan.spring_security.service.UserService;
 
 
@@ -18,6 +19,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class UserController {
 
     @Autowired
+    private JwtService jwtService;
+    
+    @Autowired
     private UserService service;
 
     @PostMapping("register")
@@ -32,12 +36,14 @@ public class UserController {
     @PostMapping("login")
     public String login(@RequestBody User user) {
 
-        Authentication authentication = authenticationManager
-            .authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+        try {
+            Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword())
+            );
 
-        if(authentication.isAuthenticated()) {
-            return "Login successful";
-        } else {
+            return jwtService.generateToken(user.getUsername());
+
+        } catch (Exception e) {
             return "Login failed";
         }
     }
