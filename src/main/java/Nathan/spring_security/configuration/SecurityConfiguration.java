@@ -61,7 +61,10 @@ public class SecurityConfiguration   {
         // lambda solution
         http
             .csrf(customizer -> customizer.disable())
-            .authorizeHttpRequests(requsts -> requsts.anyRequest().authenticated())
+                .authorizeHttpRequests(requsts -> requsts
+                    .requestMatchers("/register")
+                    .permitAll()
+                    .anyRequest().authenticated())
             // .formLogin(Customizer.withDefaults())
             .httpBasic(Customizer.withDefaults())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
