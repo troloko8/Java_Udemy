@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import io.jsonwebtoken.Jwts;
@@ -40,5 +41,14 @@ public class JwtService {
 
     private Key getKey() {
         return Keys.hmacShaKeyFor(Base64.getDecoder().decode(SECKRET));
+    }
+
+
+    public String extractUsername(String token) {
+        
+    }
+
+
+    public boolean validateToken(String token, UserDetails userDetails) {
     }
 }
